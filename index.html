@@ -7,7 +7,46 @@
 <body>
 <h1>도용이 볼 시간</h1>
 <p>
-<span></span>남았당
+<span id="time"></span> 남았당
 </p>
 </body>
+<script>
+const countDownTimer = function (id){
+	const _vvDate = new Date();
+	const _vDate = new Date(2021,08,19,18,00,00);
+	const _second = 1000;
+	const _minute = _second * 60;
+	const _hour = _minute * 60;
+	const _day = _hour * 24;
+	let timer;
+
+	function showRemaining(){
+		const now = new Date();
+		const distDt = _vDate - now;
+
+		if(distDt < 0){
+			clearInterval(timer);
+			document.getElementById(id).textContent = "만난다!!";
+			return;
+		}
+
+		const days = Math.floor(distDt / _day);
+		const hours = Math.floor((distDt % _day) / _hour);
+		const minutes = Math.floor((distDt % _hour) / _minute);
+		const seconds = Math.floor((distDt % _minute) / _second);
+
+		//document.getElementById(id).textContent = days + '일 ';
+		document.getElementById(id).textContent = hours + '시간 ';
+                document.getElementById(id).textContent += minutes + '분 ';
+                document.getElementById(id).textContent += seconds + '초 ';
+	}
+
+	timer = setInterval(function(){
+		showRemaining()
+	}, 1000);
+}
+
+countDownTimer("time");
+
+</script>
 </html>
