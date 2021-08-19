@@ -65,6 +65,12 @@ $('document').ready(
 		$('p').mouseup(function(){
 			$('#emoji').text('😗');
 		});
+		$('p').bind("touchstart",function(e){
+                        $('#emoji').text('😘');
+		});
+                $('p').bind("touchend",function(e){
+                        $('#emoji').text('😗');
+                });
 	}
 )
 </script>
