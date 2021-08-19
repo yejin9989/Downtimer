@@ -37,6 +37,14 @@ p{
     color: white;
     font-size :27pt;
 }
+div{
+
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translate(0px, -50%);
+    color: #ffffffb3;
+}
 @media(max-width: 522px){
 p{
     font-size:20pt;
