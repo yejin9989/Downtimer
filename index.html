@@ -12,8 +12,10 @@
 <body>
 <p>
 <span id="time"></span>
-</p>
+<span id="emoji">😗</span></p>
 </body>
+<script src="https://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>
+
 <script>
 const countDownTimer = function (id){
 	const _vvDate = new Date();
@@ -43,7 +45,7 @@ const countDownTimer = function (id){
 		document.getElementById(id).textContent = hours + '시간 ';
                 document.getElementById(id).textContent += minutes + '분 ';
                 document.getElementById(id).textContent += seconds + '초 ';
-                document.getElementById(id).textContent += '뒤에 봐 😘';
+                document.getElementById(id).textContent += '뒤에 봐 ';
 	}
 
 	timer = setInterval(function(){
@@ -53,5 +55,17 @@ const countDownTimer = function (id){
 
 countDownTimer("time");
 
+</script>
+<script>
+$('document').ready(
+	function(){
+		$('p').mousedown(function(){
+			$('#emoji').text('😘');
+		});
+		$('p').mouseup(function(){
+			$('#emoji').text('😗');
+		});
+	}
+)
 </script>
 </html>
